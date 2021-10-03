@@ -45,12 +45,13 @@ InstallCore () {
 }
 
 InstallPlugins () {
-    # zsh-autosuggestions
-    if [ ! -d ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions ]; then
-        git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-        else
-        echo "zsh-autosuggestions is already installed ✅" #duplicated code
-    fi
+    # zsh-autosuggestions. 
+    # 03/10/2021. Commented out. Use ctrl+r for better auto suggest.
+    # if [ ! -d ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions ]; then
+    #     git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+    #     else
+    #     echo "zsh-autosuggestions is already installed ✅" #duplicated code
+    # fi
 
     # zsh-syntax-highlighting
     if [ ! -d ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting ]; then

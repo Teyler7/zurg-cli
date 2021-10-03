@@ -68,7 +68,10 @@ ZSH_THEME="spaceship"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting fzf-zsh-plugin)
+
+# 03/10/2021 Removed "zsh-autosuggestions" as it affects readout of cli. 
+# Use fzf's ctrl+r for better suggestions that don't get in the way of output.
+plugins=(git zsh-syntax-highlighting fzf-zsh-plugin)
 
 # Zurg init image and text
 echo ""
