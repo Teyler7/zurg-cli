@@ -12,5 +12,5 @@ function cl () {
 }
 
 function rosetta () {
-    -x86_64 "$@"
+    arch -x86_64 "$@"
 }
