@@ -2,8 +2,11 @@
 
 ![](/images/zurg.gif)
 
-**Zurg-cli** is a custom layer on top of Oh My Zsh[Oh My ZSH](https://ohmyz.sh). It helps configure settings that have been pleasant, powerful, extendable, and simple to use over the years.
+**Zurg-cli** is a custom layer on top of [Oh My ZSH](https://ohmyz.sh). It helps configure settings that have been pleasant, powerful, extendable, and simple to use over the years.
 
+## Installation
+
+Please refer to [INSTALL.MD](https://github.com/Teyler7/zurg-cli/blob/main/INSTALL.md).
 ## Main Features
 
 #### Auto Completion
