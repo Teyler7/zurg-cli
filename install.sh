@@ -76,8 +76,11 @@ InstallPlugins () {
     # Iterm2 Integrated Shell Commands
     curl -L https://iterm2.com/shell_integration/install_shell_integration.sh | bash
 
-    #Install fzf terminal integrations
+    # Install fzf terminal integrations
     /usr/local/opt/fzf/install
+
+    # Install yarn globally
+    sudo npm install --global yarn
 }
 
 InstallFinish () {
