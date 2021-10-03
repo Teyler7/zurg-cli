@@ -1,0 +1,5 @@
+source ~/zurg-cli/functions.sh
+source ~/zurg-cli/aliases.sh
+source ~/zurg-cli/fzf.sh
+
+source ~/zurg-cli/custom.sh

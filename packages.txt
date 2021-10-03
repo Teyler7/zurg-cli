@@ -1,0 +1,8 @@
+PACKAGES=(
+    zsh
+    fzf
+    micro
+    htop
+    terminal-notifier
+    lazygit
+)
