@@ -45,6 +45,9 @@ InstallCore () {
 }
 
 InstallPlugins () {
+    # Install useful key bindings and fuzzy completion
+    $(brew --prefix)/opt/fzf/install
+
     # zsh-autosuggestions
     if [ ! -d ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions ]; then
         git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
