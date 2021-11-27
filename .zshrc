@@ -79,7 +79,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export EDITOR='micro'
+export EDITOR='vim'
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -121,3 +121,8 @@ source $HOME/zurg-cli/.zurg
 
 export LC_CTYPE=C 
 export LANG=C
+
+# Starship
+# TODO: Make zurg-cli a path variable
+export STARSHIP_CONFIG=~/zurg-cli/starship.toml
+eval "$(starship init zsh)"
