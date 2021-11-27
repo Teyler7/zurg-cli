@@ -32,13 +32,14 @@ fzf is a general-purpose command-line fuzzy finder.
 
 https://github.com/zyedidia/micro
 
-The best terminal editor open source can buy.
+Simple and easy to use terminal editor.
 
 #### HTOP
 
 https://hisham.hm/htop/
 
-This is htop, an interactive process viewer for Unix systems.
+An interactive process viewer for Unix systems.
+
 ## Extending Zurg
 
 If you want to add any additional things to the terminal, the best place to do that is the `custom.sh` file. The contents will be gitignored and they are appended to Zurg last.
