@@ -8,26 +8,13 @@ InstallCore () {
     echo "Looking for Homebrew..."
     if test ! $(which brew); then
         echo "Installing homebrew..."
-         if [[ `uname -m` == 'arm64' ]]; then
-            echo "Apple Silicon Detected 🍎"
-            echo "Installing Rosetta CLI 🌹"
-            /usr/sbin/softwareupdate --install-rosetta --agree-to-license
-            echo "Installing Rosetta Homebrew 🌹🍻"
-            arch -x86_64 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+        echo "Installing packages..."
+         brew install ${PACKAGES[@]}
         else
-            /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
         fi
     fi
-    echo "Homebrew Installed ✅"
-
-    if [[ !`uname -m` == 'arm64' ]]; then
-
-        echo "Installing packages 📦"
-        brew install ${PACKAGES[@]}
-        else
-            echo "Installing packages using Rosetta 🌹📦"
-            -x86_64 brew install ${PACKAGES[@]}
-    fi
+    echo "Homebrew and Zurg Packages Installed ✅"
 
     # Moving .zprofile to home directory. This points default zsh to use zurg instead.
     cp ${HOME}/zurg-cli/.zprofile ${HOME}

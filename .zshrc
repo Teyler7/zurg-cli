@@ -20,6 +20,9 @@ source $ZSH/oh-my-zsh.sh
 
 export EDITOR='vim'
 
+# Homebrew
+export PATH=/opt/homebrew/bin:$PATH
+
 # Import from .bash_profile
 export PATH="$PATH:/usr/local/sbin:$HOME/bin:$HOME/.composer/vendor/bin"
 
