@@ -1,6 +1,11 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+# Starship
+# TODO: Make zurg-cli a path variable
+export STARSHIP_CONFIG=~/zurg-cli/starship.toml
+eval "$(starship init zsh)"
+
 # Path to your oh-my-zsh installation.
 export ZSH="${HOME}/.oh-my-zsh"
 
@@ -8,7 +13,7 @@ export ZSH="${HOME}/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="spaceship"
+# ZSH_THEME="spaceship"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -103,17 +108,10 @@ export EDITOR='vim'
 # Import from .bash_profile
 export PATH="$PATH:/usr/local/sbin:$HOME/bin:$HOME/.composer/vendor/bin"
 
-# Valet+
-export PATH="$PATH:$HOME/.composer/vendor/bin"
-
 # Zurg Binaries
 export PATH="$PATH:/usr/local/sbin:$HOME/bin:$HOME/zurg-cli/bin"
 
-# Python
-export PATH=$PATH:~/Library/Frameworks/Python.framework/Versions/3.6/bin
-alias python="python3"
-
-# Disable annoying confirm
+# Disable annoying confirm for recursive remove
 setopt rmstarsilent
 
 # Path to additional addons to .zshrc
@@ -121,8 +119,3 @@ source $HOME/zurg-cli/.zurg
 
 export LC_CTYPE=C 
 export LANG=C
-
-# Starship
-# TODO: Make zurg-cli a path variable
-export STARSHIP_CONFIG=~/zurg-cli/starship.toml
-eval "$(starship init zsh)"
