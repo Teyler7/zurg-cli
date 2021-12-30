@@ -8,13 +8,13 @@ InstallCore () {
     echo "Looking for Homebrew..."
     if test ! $(which brew); then
         echo "Installing homebrew..."
-        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-        echo "Installing packages..."
-         brew install ${PACKAGES[@]}
-        else
-        fi
+        sh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
     fi
-    echo "Homebrew and Zurg Packages Installed ✅"
+    echo "Homebrew Installed ✅"
+
+    echo "Installing packages..."
+    brew install ${PACKAGES[@]}
+    echo "Packages installed 📦"
 
     # Moving .zprofile to home directory. This points default zsh to use zurg instead.
     cp ${HOME}/zurg-cli/.zprofile ${HOME}
@@ -55,10 +55,6 @@ InstallPlugins () {
         else
         echo "fzf-zsh-plugin is already installed ✅" #duplicated code
     fi
-
-    #Spaceship
-    git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1
-    ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme" 
 
     # -> Powerline fonts for Spaceship theme
     git clone git@github.com:powerline/fonts.git ${HOME}/Documents/Github

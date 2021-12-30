@@ -1,9 +1,9 @@
 PACKAGES=(
+    node
     zsh
     fzf
     micro
     htop
-    terminal-notifier
     lazygit
     starship
 )
