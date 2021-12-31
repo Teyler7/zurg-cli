@@ -1,6 +1,11 @@
+# Path to your oh-my-zsh installation.
+export ZSH="$HOME/.oh-my-zsh"
+
 # ZSH_THEME="spaceship"
 
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting fzf-zsh-plugin)
+
+source $ZSH/oh-my-zsh.sh
 
 # Zurg init image and text
 echo ""
@@ -29,6 +34,10 @@ source $HOME/zurg-cli/.zurg
 
 export LC_CTYPE=C 
 export LANG=C
+
+# asdf version manager prefix
+. /opt/homebrew/opt/asdf/asdf.sh
+. /opt/homebrew/opt/asdf/etc/bash_completion.d/asdf.bash
 
 # Starship
 
