@@ -57,7 +57,15 @@ InstallPlugins () {
     fi
 
     # -> Powerline fonts for Spaceship theme
-    git clone git@github.com:powerline/fonts.git ${HOME}/Documents/Github
+
+    # clone
+    git clone https://github.com/powerline/fonts.git --depth=1
+    # install
+    cd fonts
+    ./install.sh
+    # clean-up a bit
+    cd ..
+    rm -rf fonts
 
     # Iterm2 Integrated Shell Commands
     curl -L https://iterm2.com/shell_integration/install_shell_integration.sh | bash
