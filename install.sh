@@ -9,26 +9,28 @@ InstallCore () {
     if test ! $(which brew); then
         echo "Installing homebrew..."
         sh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+    else
+    
+        echo "Homebrew Installed ✅"
+
+        echo "Installing packages..."
+        brew install ${PACKAGES[@]}
+        echo "Packages installed 📦"
+
+        # Moving .zprofile to home directory. This points default zsh to use zurg instead.
+        cp ${HOME}/zurg-cli/.zprofile ${HOME}
+
+        # Install Oh My ZSH
+        echo "Installing Oh My ZSH and plugins"
+        if [ ! -d "/Users/${USER}/.oh-my-zsh" ]; then
+            sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+            else
+                echo "Oh My ZSH is already installed ✅" #duplicated code
+        fi
+
+        echo "Cleaning up 🧹"
+        brew cleanup
     fi
-    echo "Homebrew Installed ✅"
-
-    echo "Installing packages..."
-    brew install ${PACKAGES[@]}
-    echo "Packages installed 📦"
-
-    # Moving .zprofile to home directory. This points default zsh to use zurg instead.
-    cp ${HOME}/zurg-cli/.zprofile ${HOME}
-
-    # Install Oh My ZSH
-    echo "Installing Oh My ZSH and plugins"
-    if [ ! -d "/Users/${USER}/.oh-my-zsh" ]; then
-        sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-        else
-            echo "Oh My ZSH is already installed ✅" #duplicated code
-    fi
-
-    echo "Cleaning up 🧹"
-    brew cleanup
 }
 
 InstallPlugins () {
@@ -82,7 +84,7 @@ InstallFinish () {
     chsh -s /bin/zsh
 
     echo "Zurg install complete ✅"
-    echo "Please restart your session for changes to take effect"
+    echo "Please quit your terminal and restart for changes to take effect."
 }
 
 # Verify the user wants to install
