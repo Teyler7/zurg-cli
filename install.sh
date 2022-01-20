@@ -10,7 +10,6 @@ InstallCore () {
         echo "Installing homebrew..."
         sh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
     else
-    
         echo "Homebrew Installed ✅"
 
         echo "Installing packages..."
@@ -27,6 +26,9 @@ InstallCore () {
             else
                 echo "Oh My ZSH is already installed ✅" #duplicated code
         fi
+
+        # Node Version Manager
+        curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 
         echo "Cleaning up 🧹"
         brew cleanup
