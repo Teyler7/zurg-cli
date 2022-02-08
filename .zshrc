@@ -39,8 +39,7 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 # Path to additional addons to .zshrc
 source $HOME/zurg-cli/.zurg
 
-export LC_CTYPE=C 
-export LANG=C
+export LANG=en_US.UTF-8
 
 # asdf version manager prefix
 . /opt/homebrew/opt/asdf/asdf.sh
