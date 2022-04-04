@@ -13,3 +13,6 @@ alias modzurg="code ~/zurg-cli"
 
 # NPM
 alias vite="npm init vite"
+
+# VS Code
+alias codei="code-insiders"
