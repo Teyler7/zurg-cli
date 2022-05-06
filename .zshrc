@@ -21,7 +21,7 @@ export EDITOR='vim'
 export PATH=/opt/homebrew/bin:$PATH
 
 # Iterm2
-source $HOME/.iterm2_shell_integration.zsh
+# source $HOME/.iterm2_shell_integration.zsh
 
 # Import from .bash_profile
 export PATH="$PATH:/usr/local/sbin:$HOME/bin:$HOME/.composer/vendor/bin"
