@@ -5,6 +5,7 @@ PACKAGES=(
     fzf
     micro
     htop
+    rbenv
     lazygit
     starship
 )
