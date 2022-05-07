@@ -41,10 +41,6 @@ source $HOME/zurg-cli/.zurg
 
 export LANG=en_US.UTF-8
 
-# asdf version manager prefix
-. /opt/homebrew/opt/asdf/asdf.sh
-. /opt/homebrew/opt/asdf/etc/bash_completion.d/asdf.bash
-
 # rbenv
 eval "$(rbenv init - zsh)"
 
