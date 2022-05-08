@@ -1,3 +1,4 @@
+ZURG=$HOME/zurg-cli
 source $ZURG/packages.txt
 
 InstallCore () {
@@ -6,6 +7,20 @@ InstallCore () {
 
     # Install Brew and zurg Brew packages
     sh install-packages.sh
+
+    # Moving .zprofile to home directory. This points default zsh to use zurg instead.
+    cp ${HOME}/zurg-cli/.zprofile ${HOME}
+
+    # Install Oh My ZSH
+    echo "Installing Oh My ZSH and plugins"
+    if [ ! -d "/Users/${USER}/.oh-my-zsh" ]; then
+        sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+        else
+            echo "Oh My ZSH is already installed ✅" #duplicated code
+    fi
+
+    # Node Version Manager
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 }
 
 InstallPlugins () {
