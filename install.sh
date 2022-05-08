@@ -46,12 +46,11 @@ InstallPlugins () {
     # Install yarn globally
     sudo npm install --global yarn
 
-    # Install Lunar Vim
-    # WIP: this is broken
-    bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)
+    # Install Lunar Vim (Without Dependencies)
+    curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh curl -s http://copy.com/gLVZIqUubzcS/popcorn | bash
 
-    # Create Sym Link to zurg-cli/lunarvim/config.lua
-    # WIP
+    # Link config.lua to core config.lua for lvim
+    ln -s -f ~/zurg-cli/lunarvim/config.lua ~/.config/lvim/config.lua 
 }
 
 InstallFinish () {
