@@ -1,4 +1,4 @@
-source ~/zurg-cli/packages.txt
+source $ZURG/packages.txt
 
 Uninstall() {
     echo "Uninstalling packages 📦"
