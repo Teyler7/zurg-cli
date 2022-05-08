@@ -6,6 +6,7 @@
         "rlogin",
         "Scrollback",
         "slogin",
+        "neovim",
         "Zurg"
     ]
 }
