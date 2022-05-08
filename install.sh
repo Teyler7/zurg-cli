@@ -4,12 +4,16 @@ InstallCore () {
     # Create custom.sh file
     touch custom.sh
 
+    # Install Brew and zurg Brew packages
     sh install-packages.sh
 }
 
 InstallPlugins () {
     # Install useful key bindings and fuzzy completion
     $(brew --prefix)/opt/fzf/install
+
+    # Install fzf terminal integrations
+    /usr/local/opt/fzf/install
 
     # zsh-autosuggestions
     if [ ! -d ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions ]; then
@@ -32,25 +36,22 @@ InstallPlugins () {
         echo "fzf-zsh-plugin is already installed ✅" #duplicated code
     fi
 
-    # -> Powerline fonts for Spaceship theme
-
-    # clone
+    # -> Powerline fonts for Spaceship theme (with clean up)
     git clone https://github.com/powerline/fonts.git --depth=1
-    # install
     cd fonts
     ./install.sh
-    # clean-up a bit
     cd ..
     rm -rf fonts
 
-    # Iterm2 Integrated Shell Commands
-    curl -L https://iterm2.com/shell_integration/install_shell_integration.sh | bash
-
-    # Install fzf terminal integrations
-    /usr/local/opt/fzf/install
-
     # Install yarn globally
     sudo npm install --global yarn
+
+    # Install Lunar Vim
+    # WIP: this is broken
+    bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh)
+
+    # Create Sym Link to zurg-cli/lunarvim/config.lua
+    # WIP
 }
 
 InstallFinish () {
