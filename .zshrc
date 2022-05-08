@@ -20,9 +20,6 @@ export EDITOR='vim'
 # Homebrew
 export PATH=/opt/homebrew/bin:$PATH
 
-# Iterm2
-# source $HOME/.iterm2_shell_integration.zsh
-
 # Import from .bash_profile
 export PATH="$PATH:/usr/local/sbin:$HOME/bin:$HOME/.composer/vendor/bin"
 
@@ -44,8 +41,10 @@ export LANG=en_US.UTF-8
 # rbenv
 eval "$(rbenv init - zsh)"
 
-# Starship
+# Lunar Vim
+export PATH=~/.local/bin:$PATH
 
+# Starship
 # TODO: Make zurg-cli a path variable
 export STARSHIP_CONFIG=~/zurg-cli/starship.toml
 eval "$(starship init zsh)"
