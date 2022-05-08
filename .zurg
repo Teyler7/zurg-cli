@@ -1,6 +1,6 @@
-source ~/zurg-cli/functions.sh
-source ~/zurg-cli/aliases.sh
-source ~/zurg-cli/fzf.sh
-source ~/zurg-cli/ruby.sh
+source $ZURG/functions.sh
+source $ZURG/aliases.sh
+source $ZURG/fzf.sh
+source $ZURG/ruby.sh
 
-source ~/zurg-cli/custom.sh
+source $ZURG/custom.sh

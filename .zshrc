@@ -45,6 +45,5 @@ eval "$(rbenv init - zsh)"
 export PATH=~/.local/bin:$PATH
 
 # Starship
-# TODO: Make zurg-cli a path variable
-export STARSHIP_CONFIG=~/zurg-cli/starship.toml
+export STARSHIP_CONFIG=$ZURG/starship.toml
 eval "$(starship init zsh)"

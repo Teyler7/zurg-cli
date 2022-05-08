@@ -1,4 +1,4 @@
-source ~/zurg-cli/packages.txt
+source $ZURG/packages.txt
 
 InstallCore () {
     # Create custom.sh file
@@ -50,7 +50,7 @@ InstallPlugins () {
     curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh curl -s http://copy.com/gLVZIqUubzcS/popcorn | bash
 
     # Link config.lua to core config.lua for lvim
-    ln -s -f ~/zurg-cli/lunarvim/config.lua ~/.config/lvim/config.lua 
+    ln -s -f $ZURG/lunarvim/config.lua ~/.config/lvim/config.lua 
 }
 
 InstallFinish () {
