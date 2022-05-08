@@ -8,6 +8,21 @@ InstallCore () {
     # Install Brew and zurg Brew packages
     sh install-packages.sh
 
+    # Check for Homebrew, install if it does not exist
+    echo "Looking for Homebrew..."
+    if test ! $(which brew); then
+        echo "Installing homebrew..."
+        sh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+    fi
+    echo "Homebrew Installed ✅"
+
+    echo "Installing and upgrading packages..."
+    brew install ${PACKAGES[@]}
+    echo "Packages installed 📦"
+
+    echo "Cleaning up 🧹"
+    brew cleanup
+
     # Moving .zprofile to home directory. This points default zsh to use zurg instead.
     cp ${HOME}/zurg-cli/.zprofile ${HOME}
 
