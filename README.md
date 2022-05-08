@@ -28,11 +28,6 @@ fzf is a general-purpose command-line fuzzy finder.
 - https://github.com/junegunn/fzf
 
 ![](/images/fuzzy.gif)
-#### Micro
-
-https://github.com/zyedidia/micro
-
-Simple and easy to use terminal editor.
 
 #### HTOP
 

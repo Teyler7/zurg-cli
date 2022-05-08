@@ -1,11 +1,8 @@
 PACKAGES=(
     node
-    asdf
     zsh
     fzf
-    micro
     htop
     rbenv
-    lazygit
     starship
 )
