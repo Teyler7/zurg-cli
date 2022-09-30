@@ -35,7 +35,7 @@ InstallCore () {
     fi
 
     # Node Version Manager
-    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
 }
 
 InstallPlugins () {

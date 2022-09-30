@@ -29,12 +29,6 @@ fzf is a general-purpose command-line fuzzy finder.
 
 ![](/images/fuzzy.gif)
 
-#### HTOP
-
-https://hisham.hm/htop/
-
-An interactive process viewer for Unix systems.
-
 ## Extending Zurg
 
 If you want to add any additional things to the terminal, the best place to do that is the `custom.sh` file. The contents will be gitignored and they are appended to Zurg last.
