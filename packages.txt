@@ -2,6 +2,7 @@ PACKAGES=(
     node
     zsh
     fzf
+    htop
     rbenv
     rust
     starship

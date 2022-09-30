@@ -1,6 +1,6 @@
 source $ZURG/functions.sh
+source $ZURG/hooks.sh
 source $ZURG/aliases.sh
-source $ZURG/fzf.sh
 source $ZURG/ruby.sh
 
 source $ZURG/custom.sh
