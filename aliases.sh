@@ -17,3 +17,7 @@ alias vite="yarn create vite"
 
 # VS Code
 alias codei="code-insiders"
+
+# Always default Vim to Neovim
+alias vi="nvim"
+alias vim="vim" 

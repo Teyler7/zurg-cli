@@ -5,9 +5,6 @@ InstallCore () {
     # Create custom.sh file
     touch custom.sh
 
-    # Install Brew and zurg Brew packages
-    sh install-packages.sh
-
     # Check for Homebrew, install if it does not exist
     echo "Looking for Homebrew..."
     if test ! $(which brew); then
@@ -26,16 +23,20 @@ InstallCore () {
     # Moving .zprofile to home directory. This points default zsh to use zurg instead.
     cp ${HOME}/zurg-cli/.zprofile ${HOME}
 
-    # Install Oh My ZSH
-    echo "Installing Oh My ZSH and plugins"
+    # Node Version Manager
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
+
+    # If the default shell is not zsh, switch to it. This will require a password.
+    echo "Changing default shell 🔀"
+    chsh -s /bin/zsh
+
+    # Install Oh My ZSH. Install last because it auto detects .zshrc files and tries to switch
+    echo "Installing Oh My ZSH and configuring plugins 🛠"
     if [ ! -d "/Users/${USER}/.oh-my-zsh" ]; then
         sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
         else
             echo "Oh My ZSH is already installed ✅" #duplicated code
     fi
-
-    # Node Version Manager
-    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
 }
 
 InstallPlugins () {
@@ -66,7 +67,7 @@ InstallPlugins () {
         echo "fzf-zsh-plugin is already installed ✅" #duplicated code
     fi
 
-    # -> Powerline fonts for Spaceship theme (with clean up)
+    # -> Powerline fonts for Spaceship theme (with clean up). This will require a password to install.
     git clone https://github.com/powerline/fonts.git --depth=1
     cd fonts
     ./install.sh
@@ -78,20 +79,17 @@ InstallPlugins () {
 }
 
 InstallFinish () {
-    echo "Changing default shell 🔀"
-    chsh -s /bin/zsh
-
     echo "Zurg install complete ✅"
     echo "Please quit your terminal and restart for changes to take effect."
 }
 
 # Verify the user wants to install
 while true; do
-    read -p "Would you like to install Zurg CLI tools? (y/n): " yn
+    read -p "Would you like to install zurg CLI tools? (y/n): " yn
     case $yn in
         [Yy]* ) 
-            InstallCore;
             InstallPlugins;
+            InstallCore;
             InstallFinish;
             break;;
         [Nn]* ) exit;;
