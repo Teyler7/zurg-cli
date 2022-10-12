@@ -2,39 +2,34 @@
 
 ![](/images/zurg.gif)
 
-**Zurg-cli** is a custom layer on top of [Oh My ZSH](https://ohmyz.sh). It helps configure settings that have been pleasant, powerful, extendable, and simple to use over the years.
+**zurg-cli** is a simple, easy to use custom shell built from [Oh-My-ZSH](https://ohmyz.sh) and [Starship](https://starship.rs/). It configures a pleasant, powerful, extendable, and simple to use shell.
+
 
 ## Installation
 
 Please refer to [INSTALL.MD](https://github.com/Teyler7/zurg-cli/blob/main/INSTALL.md).
-## Some Features
 
-### Auto Completion
+## Features / Configurations
 
-![](/images/auto-complete.gif)
-
-
-### syntax-highlighting
-
-![](/images/syntax-highlighting.gif)
-
-## Third Party Integrated Tools
-
-### FZF
-
-fzf is a general-purpose command-line fuzzy finder.
-
-- https://github.com/junegunn/fzf#key-bindings-for-command-line
-- https://github.com/junegunn/fzf
-
-![](/images/fuzzy.gif)
-
-#### HTOP
-
-https://hisham.hm/htop/
-
-An interactive process viewer for Unix systems.
+- [Homebrew](https://brew.sh/)
+- [nvm (Node Version Manager)](https://github.com/nvm-sh/nvm)
+- [rbenv](https://github.com/rbenv/rbenv)
+- [fzf (Fuzzy Finder)](https://github.com/junegunn/fzf)
+  - Default configured to `ctrl` + `r`
+- [Starship](https://starship.rs/)
+- [ZSH Auto-Complete](https://github.com/marlonrichert/zsh-autocomplete)
+- [ZSH Syntax Highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
+- [Oh-My-ZSH Git Shortcuts](https://kapeli.com/cheat_sheets/Oh-My-Zsh_Git.docset/Contents/Resources/Documents/index)
+- [HTOP](https://htop.dev/)
+- [Neovim](https://neovim.io/)
+- [LunarVim](https://www.lunarvim.org/)
 
 ## Extending Zurg
 
 If you want to add any additional things to the terminal, the best place to do that is the `custom.sh` file. The contents will be gitignored and they are appended to Zurg last.
+
+## Uninstall
+
+Run `sh uninstall.sh` to clean up the brew packages and revert back to the default configured shell environment that came before zurg-cli.
+
+- Note: This will uninstall the packages in `package.txt` from brew. If you need them for a previous shell, they will need to be reinstalled.

@@ -27,10 +27,6 @@ setopt rmstarsilent
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
-# Always default Vim to Neovim
-alias vi="nvim"
-alias vim="vim"
-
 # Path to additional addons to .zshrc
 source $HOME/zurg-cli/.zurg
 
@@ -40,6 +36,5 @@ export LANG=en_US.UTF-8
 # rbenv
 eval "$(rbenv init - zsh)"
 
-# Starship (and custom .toml file)
-export STARSHIP_CONFIG=$ZURG/starship.toml
+# Starship
 eval "$(starship init zsh)"

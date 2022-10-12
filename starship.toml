@@ -1,4 +1,0 @@
-# Custom Starship Overrides
-
-[nodejs]
-format = "via [⬢ $version](bold green) "

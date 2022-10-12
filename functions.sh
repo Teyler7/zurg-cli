@@ -4,6 +4,10 @@ function showfunc () {
     echo ""
     echo "cl: code ~/zsh-config"
     echo "lg: Lazy git with dir changing upon exit"
+    echo "fd: Fuzzy find and switch directory"
+    echo "fch: Fuzzy find remote directoy and checkout"
+    echo "fshow: Fuzzy find and show file"
+    echo "fbr: Fuzzy find and checkout branch"
 }
 
 function cl () {
@@ -31,6 +35,16 @@ fd() {
   cd "$dir"
 }
 
+fch() {
+    git rev-parse HEAD > /dev/null 2>&1 || return
+
+    git branch --color=always --all --sort=-committerdate |
+        grep -v HEAD |
+        fzf --height 50% --ansi --no-multi --preview-window right:65% \
+            --preview 'git log -n 50 --color=always --date=short --pretty="format:%C(auto)%cd %h%d %s" $(sed "s/.* //" <<< {})' |
+        sed "s/.* //"
+}
+
 fshow() {
   git log --graph --color=always \
       --format="%C(auto)%h%d %s %C(black)%C(bold)%cr" "$@" |
@@ -40,11 +54,6 @@ fshow() {
                 xargs -I % sh -c 'git show --color=always % | less -R') << 'FZF-EOF'
                 {}
   FZF-EOF"
-}
-
-fda() {
-  local dir
-  dir=$(find ${1:-.} -type d 2> /dev/null | fzf +m) && cd "$dir"
 }
 
 fbr() {
