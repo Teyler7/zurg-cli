@@ -1,15 +1,9 @@
 source ./packages.txt
 
 Uninstall() {
-    echo "Uninstalling packages 📦"
-    brew uninstall ${PACKAGES[@]}
-
-    echo "Cleaning up 🧹"
-    brew cleanup
-
     echo "Removing .zprofile to restore default config"
-    if [ ! -d "/Users/${USER}/.zprofile" ]; then
-        rm "/Users/${USER}/.zprofile"
+    if [ ! -d "${HOME}/.zprofile" ]; then
+        rm "${HOME}/.zprofile"
     else
         echo ".zprofile has already been removed" #duplicated code
     fi

@@ -67,12 +67,8 @@ InstallPlugins () {
         echo "fzf-zsh-plugin is already installed ✅" #duplicated code
     fi
 
-    # -> Powerline fonts for Spaceship theme (with clean up). This will require a password to install.
-    git clone https://github.com/powerline/fonts.git --depth=1
-    cd fonts
-    ./install.sh
-    cd ..
-    rm -rf fonts
+    # Install Meslo Nerd Font 
+    brew tap homebrew/cask-fonts && brew install --cask font-meslo-lg-nerd-font
 
     # Install yarn globally
     sudo npm install --global yarn

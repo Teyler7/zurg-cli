@@ -1,4 +1,4 @@
-#This file is added to the $HOME directoriy from running zurg install.sh
+#This file is added to the $HOME directory from running zurg install.sh
 
 # Zurg Path for env use
 ZURG=$HOME/zurg-cli
