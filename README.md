@@ -32,4 +32,4 @@ If you want to add any additional things to the terminal, the best place to do t
 
 Run `sh uninstall.sh` to clean up the brew packages and revert back to the default configured shell environment that came before zurg-cli.
 
-- Note: This will uninstall the packages in `package.txt` from brew. If you need them for a previous shell, they will need to be reinstalled.
+- Note: This will leave the packages from [packages.txt](https://github.com/teyler7/zurg-cli/blob/main/packages.txt) installed to prevent brew collisions.
