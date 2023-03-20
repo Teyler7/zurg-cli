@@ -19,5 +19,4 @@ alias vite="yarn create vite"
 alias codei="code-insiders"
 
 # Always default Vim to Neovim
-alias vi="nvim"
-alias vim="vim" 
+alias vim="nvim"
