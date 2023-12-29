@@ -41,3 +41,6 @@ eval "$(rbenv init - zsh)"
 
 # Starship
 eval "$(starship init zsh)"
+
+# Use vim in terminal
+set -o vi
