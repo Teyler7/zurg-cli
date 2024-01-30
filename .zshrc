@@ -8,7 +8,7 @@ plugins=(git zsh-autosuggestions zsh-syntax-highlighting fzf-zsh-plugin)
 source $ZSH/oh-my-zsh.sh
 
 # Add ssh keys to keychain quietly
-ssh-add --apple-use-keychain ~/.ssh/id_ed25519 -q
+# ssh-add --apple-use-keychain ~/.ssh/id_ed25519 -q
 
 # Zurg init image and text
 echo ""
