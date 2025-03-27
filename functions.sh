@@ -45,3 +45,23 @@ fshow() {
                 {}
   FZF-EOF"
 }
+
+alias yh="git rev-parse --verify HEAD | tr -d "\n" | pbcopy"
+
+function coauth() {
+  gh api repos/{owner}/{repo}/collaborators --paginate --jq '.[] | .login + " <" + .html_url + ">"' | fzf --multi | xargs -I _ printf "Co-authored-by: %s\n" "_"| pbcopy
+}
+function gspin() {
+  if [ $# -ne 1 ]; then
+    echo "Usage: gspin <branch_name>"
+    return 1
+  fi
+  spinoff_from_branch=$(git branch --show-current)
+  spinoff_from_reset_sha=$(git rev-parse origin/$spinoff_from_branch)
+  git checkout -b $1
+  git update-ref -m "gspin: moving $spinoff_from_branch to $spinoff_from_reset_sha" refs/heads/$spinoff_from_branch $spinoff_from_reset_sha
+}
+
+function gpop() {
+  git stash list | fzf --preview 'git stash show --color -p $(cut -d: -f1 <<< {})'| cut -d: -f1 | xargs git stash pop
+}

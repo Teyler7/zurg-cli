@@ -37,6 +37,10 @@ source $HOME/zurg-cli/.zurg
 export LANG=en_US.UTF-8
 
 # rbenv
+
+# This needs to be in the .zshrc file to work with Claude
+# TODO: https://www.gnu.org/software/stow/
+export PATH="/Users/teyler-pe/.rbenv/shims:$PATH"
 eval "$(rbenv init - zsh)"
 
 # Starship
